@@ -1,4 +1,4 @@
----
+p---
 format:
   html:
     theme: cosmo
@@ -32,6 +32,46 @@ format:
 - [ ] Use a for loop to print the numbers 1 to 5.
 - [ ] Use a for loop to compute the mean of a numeric vector.
 
+```{r}
+print("Hello World!")
+fnHello <- function(name){
+  print(paste0("Hello ", name))
+}
+fnHello("Roman")
+answer <- 42
+print(answer)
+vector = c(1,2,3,4,5)
+print(vector)
+vector = (1:100)
+vector
+
+mat = matrix(1:100, nrow=10, ncol=10)
+mat
+
+df <- data.frame(
+ name = c("John", "Paul", "Smith"), 
+ age = c(20, 21, 22)
+)
+
+df
+
+sq <- function(input){
+  return(input * input)
+}
+sq(9)
+
+for(i in 1:5){
+  print(i)
+}
+
+sum = 0
+vector = c(1, 6, 9)
+for(i in vector){
+  sum = sum + i
+}
+mean = sum / length(vector)
+mean
+```
 
 ## Part 1b: Lists
 
@@ -121,6 +161,14 @@ students <- data.frame(
     name = c("Ada", "Alan", "Grace", "Edsger", "Katherine"),
     score = c(72, 65, 43, 38, 91)
 )
+students$result = if_else(students$score > 39, "Pass", "Fail")
+
+students$grade = case_when(
+ 
+)
+
+students
+
 ```
 
 - [ ] Using `if_else`, add a new column `result` to `students` that is `"pass"` when the score is at least 40 and `"fail"` otherwise.
@@ -144,7 +192,7 @@ The modulo operator `%%` gives the remainder of a division, so `year %% 400 == 0
 ```{r}
 #| error: TRUE
 is_leap_year <- function(year) {
-    FALSE # Replace with correct code.
+    if(year %% 400 == 0){}
 }
 
 # Self-check: should run without error once is_leap_year is correct
